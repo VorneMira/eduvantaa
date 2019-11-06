@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Info-sivu</title>
+<script src="jquery.js"></script>
+<style type="text/css">
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    h1{
+        
+        color:darkslategray;
+    }
+    .laatikko{
+        width: 1000px;
+        border-style:none;
+    }
+    .sisaltoLaatikko{
+        width: 25%;
+        border-style:none;
+        float:left;
+        position:relative;
+        background-color:lightgrey;
+    }
+    
+    .arvosteluLaatikko{
+        width:100%;
+        border-style:none;
+        float:left;
+        background-color:lightgrey;
+    }
+    .infoLaatikko{
+        width: 72%;
+        border-style:none;
+        float:right;
+        position:relative;
+    }
+    .arvosteluLaatikko{
+        width: 25%;
+        border-style:none;
+        float:left;
+        position:relative;
+    }
+    .info2Laatikko{
+        width: 72%;
+        border-style:none;
+        float:right;
+        position:relative;
+    }
+    .tervetuloa{
+        margin-top:50px;
+    }
+    #viikkoPaneeli {
+       padding: 5px;
+       text-align: left;
+       display:none;
+       width:100%;
+       border-style:none;
+       float:left;
+       background-color:lightgreen;
+    }
+    #arvosteluPaneeli {
+       padding: 5px;
+       text-align: left;
+       display:none;
+       width:100%;
+       border-style:none;
+       float:left;
+       background-color:lightgreen;
+    }
+
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+    
+    $(".kuva").click(function(){
+    $("#viikkoPaneeli").slideToggle("slow");
+  });
+  
+  $(".kuva2").click(function(){
+    $("#arvosteluPaneeli").slideToggle("slow");
+  });
+
+});
+</script>
+</head>
+<body>
+    <h1>OJSATTN17</h1>
+    <div class="laatikko">
+        <div class="sisaltoLaatikko">
+            <b>Kurssin sisältö viikottain 2019</b>
+        </div>
+        <div class="infoLaatikko">
+            <img src="info-icon.jpg" class="kuva">
+        </div>
+    </div>
+    
+    <div id="viikkoPaneeli">
+        <ul> 
+            <li>vk 43: HTML / CSS / jQuery</li>
+            <li>vk 44: jQuery</li>
+            <li>vk 45: Tietovarastot</li>
+            <li>vk 46: Node.js</li>
+            <li>vk 47: JSON</li>
+            <li>vk 48: Sulautetut järjestelmät</li>
+            <li>vk 49: Kurssiprojektin toteutus</li>
+            <li>vk 50: Kurssiprojektin toteutus</li>
+            <li>vk 51: Palautukset</li>
+        </ul>
+    </div> 
+    
+    <div class="laatikko">
+        <div class="arvosteluLaatikko">
+            <b>Arvostelun periaatteet</b>
+        </div>
+        <div class="info2Laatikko">
+            <img src="info-icon.jpg" class="kuva2">
+        </div>
+    </div>
+    <div class="tuloksetLaatikko">
+        
+    </div>
+    <div id="arvosteluPaneeli">
+        <p>Tuntitehtävät 40%</p>
+        <p>Projekti 60%</p>
+    </div> 
+    <br>
+    <div class="tervetuloa">
+        <p><b>Tervetuloa kurssille!</b></p> 
+        <p>Täällä opit tekemään selainpohjaisia sovelluksia!</p>
+    </div>
+     
+</body>
+</html>                            
