@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Tyylitiedostoharjoituksia
+        </title>
+        <link rel="stylesheet" type="text/css" href="tyyli2.css">
+        <script src="aivot.js"></script>
+    </head>
+    <body>
+        <button type="button" onclick="laatikkoFunktio(1)" class="muutosNappi">Muuta 1. laatikon sisältöä.</button>
+        <button type="button" onclick="laatikkoFunktio(2)" class="muutosNappi">Muuta 2. laatikon sisältöä.</button>
+        <button type="button" onclick="laatikkoFunktio(3)" class="muutosNappi">Muuta 3. laatikon sisältöä.</button>
+        <img src="smiley1.png" height="100px" width="100px">
+        <div class="alusta1">
+            <div class="alusta2" id="laatikko1">
+                <h1 class="originalOtsikko1">Hello World!</h1>
+                <p>Lorem ipsum jne</p>
+            </div>
+
+            <div class="alusta3">
+                <h1 class="originalOtsikko2">Hei maailma!</h1>
+                <p>Lorem ipsum jne</p>
+            </div>
+
+            <div class="kategoriat">
+                <h2 class="originalOtsikko3">Kategoriat</h2>
+                <ul>
+                    <li><a href="">kategoria 1</a></li>
+                    <li><a href="">kategoria 2</a></li>
+                    <li><a href="">kategoria 3</a></li>
+                    <li><a href="">kategoria 4</a></li>
+                </ul>
+            </div>
+            <div>
+                    <form id="yhteystietolomake">
+                        Nimi: <input type="text" name="Nimi" value=""><br>
+                        Email: <input type="email" name="Email" value=""><br>
+                        Puh: <input type="number" name="Puh" value=""><br><br>
+                    </form> 
+                    <button onclick="yhteystietoFunktio()">Tulosta</button>
+            </div>
+            <div id="yhteystiedotTuloste">
+
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,189 @@
+/*
+*{
+    margin:0;
+    padding:0;
+}
+*/
+body{
+    background-color: #f4f4f4; 
+    color:#555555;
+    font-family: Arial, Helvetica, sans-serif; 
+    /*
+    Jos käyttäjän selain ei tue ensimmäistä, se käyttää seuraavaa jne.
+    */
+    font-size: 16px;
+    font-weight: normal; 
+    /*
+    Voit käyttää esim. bold, tai numerona 400 jne.
+    fontin voi määritellä myös yksinkertaisemmin näin:
+    font: normal 16px Arial, Helvetica, sans-serif;
+    */
+    line-height: 1.6em; /*tai 3px*/
+    margin:0;
+}
+/*
+Värejä voidaan määritellä: (https://htmlcolorcodes.com/)
+- HTML5:ssä värien nimellä, esim. red, blue jne.
+- Heksadesimaaleina, esim. #f4f4f4
+- RGB väreinä, esim. rgb(0, 0, 255)
+
+Käytä web safe -fontteja
+https://www.w3schools.com/cssref/css_websafe_fonts.asp
+
+*/
+.muutosNappi{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+.muutosNappi:hover{
+    background-color: rgb(107, 99, 141);
+    text-decoration: underline;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+a:hover{
+    color: red;
+}
+a:active{
+    color: green;
+}
+a:visited{
+    color: black;
+}
+.alusta1{
+    width:80%;
+    margin:auto;
+    margin-top:5px;
+    margin-right: 10px;
+    margin-bottom:5px;
+    margin-left: 10px;
+}
+/*
+padding = sisällön etäisyys alustan reunuksista.
+border = alustan reunuksen määritykset.
+margin = alustaa ympäröivä marginaali ikkunan reunoista.
+voidaan myös määritellä:
+margin: 5px 10px 5px 10px;
+margin: 5px 10px;
+*/
+.alusta2{
+    background-color: #333333;
+    color:#ffffff;
+    border-right: 5px red solid;
+    border-left: 5px red solid;
+    border-top: 5px red solid;
+    border-bottom: 5px red solid;
+    /* 
+    tai: 
+    border: 5px red solid; 
+    */
+    border-width: 3px;
+    /*
+    tai esim. 
+    border-bottom-width: 3px;
+    jne.
+    */
+    border-top-style:dotted;
+    /*
+    tai solid, dash, double
+    */
+    padding: 20px;
+    margin: 20px;
+}
+.originalOtsikko1{
+    font-family:Tahoma;
+    font-weight:800;
+    font-style:italic;
+    text-decoration:underline;
+    text-transform:uppercase;
+    letter-spacing: 0.2em;
+    word-spacing: 0.2em;
+}
+
+.uusiOtsikko1{
+    font-family:Tahoma;
+    font-weight:normal;
+    font-style:normal;
+    text-decoration:none;
+    text-transform:none;
+    letter-spacing: 0.2em;
+    word-spacing: 0.2em;
+}
+.originalOtsikko2{
+    text-align:left;
+}
+
+.uusiOtsikko2{
+    font-family:Tahoma;
+    font-weight:normal;
+    font-style:normal;
+    text-decoration:none;
+    text-transform:none;
+    letter-spacing: 0.2em;
+    word-spacing: 0.2em;
+}
+.originalOtsikko3{
+    text-align: center;
+}
+
+.uusiOtsikko3{
+    font-family:Tahoma;
+    font-weight:normal;
+    font-style:normal;
+    text-decoration:none;
+    text-transform:none;
+    letter-spacing: 0.2em;
+    word-spacing: 0.2em;
+}
+.alusta3{
+    border: 3px dotted #cccccc;
+    padding: 20px;
+    margin: 20px 0;
+}
+.kategoriat{
+    border:1px #cccccc solid;
+    padding: 10px;
+    border-radius: 15px; /* pyöreät kulmat */
+}
+.kategoriat ul{
+    padding: 0;
+    padding-left: 20px;
+    list-style: square; /* voit myös määritellä none */
+
+}
+.kategoriat li{
+    padding-bottom: 6px;
+    border-bottom: dotted 1px #333333;
+    list-style-image: url('star.jpg');
+}
+
+.lomake{
+    padding: 20px;
+}
+.lomake .lomaketyylit{
+    padding-bottom: 15px;
+}
+.lomake label{
+    display:block;
+}
+.lomake input[type="text"]{
+    padding:8px;
+    width:100%;
+}
+.button{
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px 15px;
+    border:none;
+}
+.button:hover{
+    background:red;
+    color: #ffffff;
+}

@@ -6,12 +6,20 @@
 <script src="jquery.js"></script>
 <style type="text/css">
     .laatikko{
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         background: #9d7ede;
-        margin-top: 30px;
-        border-style: solid; /* Required to animate border width */
+        margin-top: 20px;
+        border-style: solid; 
         border-color: #6f40ce;
+        position: relative;
+    }
+    .kuva{
+        display: block;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
     }
 </style>
 <script type="text/javascript">
@@ -24,11 +32,20 @@ $(document).ready(function(){
             .animate({borderWidth: "10px"})
             .animate({opacity: 0.5});
     });
+
+    $(".laatikko").mouseover(function(){
+        $(".kuva").fadeOut(1000);
+    });
+
+    $(".laatikko").mouseout(function(){
+        $(".kuva").fadeIn(1000);
+    });
 });
 </script>
 </head>
 <body>
     <button type="button">Suurenna laatikko</button>
-    <div class="laatikko"></div>
+    <div class="laatikko"><img src="star.png" class="kuva">
+    </div>
 </body>
 </html>                            
