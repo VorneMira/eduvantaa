@@ -6,7 +6,66 @@
         
             <script>
                 function haeTiedostosta(){
-                    $.ajax({
+                    /* Raspin ip tuohon ja kommentit pois, ja kommentteihin sitä seuraava rivi */
+                    //$.getJSON("http://192.168.1.198:3000/arvot", function(data){
+                    $.getJSON("https://paneelipalvelin.azurewebsites.net/arvot", function(data){
+                        $.each(data, function (index, value) {
+                            console.log(value);
+                        });
+
+                        var arrayData="";
+                            $("#testi").html(arrayData[0]);
+                            var c = document.getElementById("myCanvas");
+                            //var arvoArray;
+                            //var arvoPituus;
+                            var piste=40;
+                            var diagrammi = c.getContext("2d");
+                            //arvoArray = data.split(":");
+                                
+                            //arvoPituus= arvoArray.length;
+                            
+                            diagrammi.beginPath();
+                            diagrammi.strokeStyle = "blue";
+
+                            //diagrammi.moveTo(piste, 400-arvoArray[0]);
+                            diagrammi.moveTo(piste, 400-(200+(data[0].temp*5)))
+                            diagrammi.fillText(data[0].temp, piste, 400-(200+(data[0].temp*5)));
+                            var prevDate = "";
+                            for (i = 1; i < data.length; i++) {
+                                piste=piste+20;
+                                diagrammi.lineTo(piste, 400-(200+(data[i].temp*5)));
+                                diagrammi.fillText(data[i].temp, piste, 400-(200+(data[i].temp*5)));
+                                if (i % 5 == 1) {
+                                    diagrammi.fillText("| ", piste, 380);
+                                    diagrammi.fillText("klo " + data[i].time, piste - 12, 390);
+                                    if (prevDate != data[i].date) {
+                                        diagrammi.fillText(data[i].date, piste - 12, 400);
+                                        prevDate = data[i].date;
+                                    }                                    
+                                }                                
+                            }
+                            diagrammi.stroke();
+
+                            diagrammi.fillText("-30", 0, 350);
+                            diagrammi.fillText("-20", 0, 300);
+                            diagrammi.fillText("-10", 0, 250);
+                            diagrammi.fillText("0", 0, 200);
+                            diagrammi.fillText("10", 0, 150);
+                            diagrammi.fillText("20", 0, 100);
+                            diagrammi.fillText("30", 0, 50);
+                            //diagrammi.fillText("400", 0, 00);
+                            //diagrammi.fillText("450", 0, 50);
+/*
+                            diagrammi.fillText("5.8.", 120, 400);
+                            diagrammi.fillText("10.8.", 220, 400);
+                            diagrammi.fillText("15.8.", 320, 400);
+                            diagrammi.fillText("20.8.", 420, 400);
+                            diagrammi.fillText("25.8.", 520, 400);
+                            diagrammi.fillText("30.8.", 620, 400);*/
+                    });
+
+
+                    /*$.ajax({
                         type: "GET",
                         url: "http://localhost:3000/arvot",
 
@@ -60,7 +119,7 @@
                         error: function(XMLHttpRequest, textStatus, errorThrown){
                             console.log("error");
                         }
-                    });
+                    });*/
                 }
             </script>
     </head>
@@ -69,6 +128,6 @@
         <p id="testi"> 
 
         </p>
-        <canvas id="myCanvas" width="700" height="400" style="border:0px solid black;"></canvas>
+        <canvas id="myCanvas" width="1500" height="400" style="border:0px solid black;"></canvas>
     </body>
 </html>
